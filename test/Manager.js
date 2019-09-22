@@ -71,16 +71,6 @@ describe("Connection Manager", function() {
         assert.equal(man.url, defaultUrl);
     });
 
-    it("Instantiates with orders api", function() {
-        let man = new Manager({url: "wss://eu.nodes.bitshares.ws", urls: [], optionalApis: {enableOrders: true}});
-        return new Promise( function(resolve, reject) {
-            man.connect().then(() => {
-                assert(!!Apis.instance().orders_api());
-                resolve();
-            })
-        });
-    });
-
     it("Tries to connect default url", function() {
         this.timeout(3000);
         let man = new Manager({url: defaultUrl, urls: faultyNodeList.map(a => a.url)});

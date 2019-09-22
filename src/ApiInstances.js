@@ -73,13 +73,12 @@ export const db = get("_db");
 export const network = get("_net");
 export const history = get("_hist");
 export const crypto = get("_crypt");
-export const orders = get("_orders");
 
 const newApis = () => ({
   connect: (
     cs,
     connectTimeout,
-    optionalApis = { enableCrypto: false, enableOrders: false }
+    optionalApis = { enableCrypto: false }
   ) => {
     // console.log("INFO\tApiInstances\tconnect\t", cs);
     Apis.url = cs;
@@ -119,8 +118,6 @@ const newApis = () => ({
         Apis._db = new GrapheneApi(Apis.ws_rpc, "database");
         Apis._net = new GrapheneApi(Apis.ws_rpc, "network_broadcast");
         Apis._hist = new GrapheneApi(Apis.ws_rpc, "history");
-        if (optionalApis.enableOrders)
-          Apis._orders = new GrapheneApi(Apis.ws_rpc, "orders");
         if (optionalApis.enableCrypto)
           Apis._crypt = new GrapheneApi(Apis.ws_rpc, "crypto");
         var db_promise = Apis._db.init().then(() => {
@@ -139,7 +136,6 @@ const newApis = () => ({
             });
             Apis._net.init();
             Apis._hist.init();
-            if (optionalApis.enableOrders) Apis._orders.init();
             if (optionalApis.enableCrypto) Apis._crypt.init();
           });
         };
@@ -150,7 +146,6 @@ const newApis = () => ({
         };
         let initPromises = [db_promise, Apis._net.init(), Apis._hist.init()];
 
-        if (optionalApis.enableOrders) initPromises.push(Apis._orders.init());
         if (optionalApis.enableCrypto) initPromises.push(Apis._crypt.init());
         return Promise.all(initPromises);
       })
@@ -175,6 +170,5 @@ const newApis = () => ({
   network_api: () => Apis._net,
   history_api: () => Apis._hist,
   crypto_api: () => Apis._crypt,
-  orders_api: () => Apis._orders,
   setRpcConnectionStatusCallback: callback => (Apis.statusCb = callback)
 });

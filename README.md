@@ -98,19 +98,6 @@ __Usage examples__
 | get_assets                   | [array asset_ids]|
 | list_assets                   | [string lower_bound_symbol, int limit]|
 | lookup_asset_symbols                   | [array symbols_or_ids]|
-### Markets / feeds
-| Method Name                 | Params      |
-| --------------------------- |:-----------:|
-| get_limit_orders                   | [string asset_id_a, string asset_id_b, int limit] |
-| get_call_orders                   | [string asset_id, int limit] |
-| get_settle_orders                   | [string asset_id, int limit] |
-| get_margin_positions                   | [string account_id] |
-| subscribe_to_market                   | [function callback, string asset_id_a, string asset_id_b] |
-| unsubscribe_from_market                   | [string asset_id_a, string asset_id_b] |
-| get_ticker                   | [string base, string quote] |
-| get_24_volume                   | [string base, string quote] |
-| get_order_book                   | [string base, string quote, int limit] |
-| get_trade_history                   | [string base, string quote, date start, date stop, int limit] |
 
 ## Tests
 
