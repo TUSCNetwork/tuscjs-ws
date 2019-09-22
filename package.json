@@ -1,7 +1,7 @@
 {
-  "name": "bitsharesjs-ws",
-  "version": "3.1.1",
-  "description": "Pure JavaScript BitShares websocket interface for node.js and browsers.",
+  "name": "tuscjs-ws",
+  "version": "0.0.1",
+  "description": "Pure JavaScript TUSC websocket interface for node.js and browsers.",
   "browser": {
     "ws": false
   },
@@ -18,22 +18,20 @@
     "build": "babel src -d lib",
     "postbuild": "npm run browserify",
     "prepublish": "npm run build",
-    "browserify": "cross-env NODE_ENV=production browserify lib/index.js --standalone bitshares_ws -o build/bitsharesjs-ws.js -d",
-    "postbrowserify": "cross-env NODE_ENV=production minify build/bitsharesjs-ws.js --mangle --outFile build/bitsharesjs-ws.min.js"
+    "browserify": "cross-env NODE_ENV=production browserify lib/index.js --standalone tuscjs_ws -o build/tuscjs-ws.js -d",
+    "postbrowserify": "cross-env NODE_ENV=production minify build/tuscjs-ws.js --mangle --outFile build/tuscjs-ws.min.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitshares/bitsharesjs-ws.git"
+    "url": "git+https://github.com/TUSCNetwork/tuscjs-ws.git"
   },
-  "author": "BitShares UI Worker <ui-dev@bitshares.org>",
+  "author": "",
   "contributors": [
-    "Sigve Kvalsvik <bitsharesblocks@gmail.com> (https://github.com/svk31)",
-    "James Calfee <james@jcalfee.info> (https://github.com/jcalfee/)",
-    "scientistnik"
+    ""
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitshares/bitsharesjs-ws/issues"
+    "url": "https://github.com/TUSCNetwork/tuscjs-ws/issues"
   },
   "engines": {
     "node": ">= 10.0.0"

@@ -5,11 +5,11 @@ var config = {
   expire_in_secs_proposal: 24 * 60 * 60,
   review_in_secs_committee: 24 * 60 * 60,
   networks: {
-    BitShares: {
-      core_asset: "BTS",
-      address_prefix: "BTS",
+    TUSC: {
+      core_asset: "TUSC",
+      address_prefix: "TUSC",
       chain_id:
-        "4018d7844c78f6a6c41c6a552b898022310fc5dec06da467ee7905a8dad512c8"
+        "1c924c962905ad379a369f83f0135ec128307d2d2508b17b400125e45b547c9a"
     },
     Muse: {
       core_asset: "MUSE",
