@@ -18,7 +18,7 @@
     "build": "babel src -d lib",
     "postbuild": "npm run browserify",
     "prepublish": "npm run build",
-    "browserify": "cross-env NODE_ENV=production browserify lib/index.js --standalone tuscjs_ws -o build/tuscjs-ws.js -d",
+    "browserify": "cross-env NODE_ENV=production browserify lib/index.js --standalone tusc_ws -o build/tuscjs-ws.js -d",
     "postbrowserify": "cross-env NODE_ENV=production minify build/tuscjs-ws.js --mangle --outFile build/tuscjs-ws.min.js"
   },
   "repository": {
