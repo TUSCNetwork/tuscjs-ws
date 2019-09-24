@@ -37,48 +37,6 @@ describe("Api", () => {
                 }
             })
         });
-
-        it("Market subscription", function() {
-            this.timeout(10000);
-            return new Promise( function(resolve, reject) {
-                Apis.instance().db_api().exec( "subscribe_to_market", [
-                    callback, "1.3.0", "1.3.113"
-                ] ).then(function(sub) {
-                    if (sub === null) {
-                        resolve();
-                    } else {
-                        reject(new Error("Expected sub to equal null"));
-                    }
-                });
-                function callback() {
-                    resolve();
-                }
-            })
-        })
-
-        it("Market unsubscribe", function() {
-            this.timeout(10000);
-            return new Promise( function(resolve) {
-                Apis.instance().db_api().exec( "subscribe_to_market", [
-                    callback, "1.3.0", "1.3.113"
-                ] ).then(function() {
-
-                    Apis.instance().db_api().exec("unsubscribe_from_market", [
-                        callback, "1.3.0", "1.3.113"
-                    ]).then(function(unsub) {
-                        if (unsub === null) {
-                            resolve();
-                        } else {
-                            reject(new Error("Expected unsub to equal null"));
-                        }
-                    })
-                });
-
-                function callback() {
-                    resolve()
-                }
-            })
-        })
     })
 
     describe("Database API", function() {

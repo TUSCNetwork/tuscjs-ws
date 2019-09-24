@@ -145,7 +145,6 @@ class ChainWebSocket {
     if (
       [
         "set_subscribe_callback",
-        "subscribe_to_market",
         "broadcast_transaction_with_callback",
         "set_pending_transaction_callback",
         "set_block_applied_callback"
@@ -161,7 +160,7 @@ class ChainWebSocket {
     }
 
     if (
-      ["unsubscribe_from_market", "unsubscribe_from_accounts"].includes(method)
+      ["unsubscribe_from_accounts"].includes(method)
     ) {
       if (typeof params[2][0] !== "function") {
         throw new Error(
