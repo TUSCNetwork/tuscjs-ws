@@ -1,6 +1,6 @@
 var config = {
-  core_asset: "CORE",
-  address_prefix: "GPH",
+  core_asset: "TUSC",
+  address_prefix: "TUSC",
   expire_in_secs: 15,
   expire_in_secs_proposal: 24 * 60 * 60,
   review_in_secs_committee: 24 * 60 * 60,
@@ -9,7 +9,7 @@ var config = {
       core_asset: "TUSC",
       address_prefix: "TUSC",
       chain_id:
-        "1c924c962905ad379a369f83f0135ec128307d2d2508b17b400125e45b547c9a"
+        "5a64159ecf7214e8d072712ed9341cda01d9a8d9f8d6ac554decb41542497168"
     },
     Muse: {
       core_asset: "MUSE",
@@ -18,10 +18,10 @@ var config = {
         "45ad2d3f9ef92a49b55c2227eb06123f613bb35dd08bd876f2aea21925a67a67"
     },
     Test: {
-      core_asset: "TEST",
-      address_prefix: "TEST",
+      core_asset: "TUSC",
+      address_prefix: "TUSC",
       chain_id:
-        "39f5e2ede1f8bc1a3a54a7914414e3779e33193f1f5693510e73cb7a87617447"
+        "2f3b0eda49110b33e8992da47c73f96db7b8cf28e68d5dabf7e39e48a69371ed"
     },
     Obelisk: {
       core_asset: "GOV",
@@ -51,15 +51,15 @@ var config = {
   },
 
   reset: () => {
-    config.core_asset = "CORE";
-    config.address_prefix = "GPH";
+    config.core_asset = "TUSC";
+    config.address_prefix = "TUSC";
     config.expire_in_secs = 15;
     config.expire_in_secs_proposal = 24 * 60 * 60;
 
     console.log("Chain config reset");
   },
 
-  setPrefix: (prefix = "GPH") => (config.address_prefix = prefix)
+  setPrefix: (prefix = "TUSC") => (config.address_prefix = prefix)
 };
 
 export default config;
